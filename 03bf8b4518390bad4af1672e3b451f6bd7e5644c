@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAen///OM\u003d",
+        "filename": "prebuilt/etc/init.d/20-wifical",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 401
+      },
+      "writtenOn": "2013-04-04T01:27:28Z",
+      "side": 1,
+      "message": "/system",
+      "revId": "03bf8b4518390bad4af1672e3b451f6bd7e5644c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
