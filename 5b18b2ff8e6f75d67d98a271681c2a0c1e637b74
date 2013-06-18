@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "iEqq-9U",
+        "filename": "OMAP4Parts/res/values-cs/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2270
+      },
+      "writtenOn": "2013-06-18T22:25:54Z",
+      "side": 1,
+      "message": "n?má \u003d\u003e nemá",
+      "revId": "5b18b2ff8e6f75d67d98a271681c2a0c1e637b74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iCqw60I",
+        "filename": "OMAP4Parts/res/values-cs/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2270
+      },
+      "writtenOn": "2013-06-18T22:25:54Z",
+      "side": 1,
+      "message": "telefonie \u003d\u003e telefonu",
+      "revId": "5b18b2ff8e6f75d67d98a271681c2a0c1e637b74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iAqtJ.k",
+        "filename": "OMAP4Parts/res/values-cs/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2270
+      },
+      "writtenOn": "2013-06-18T22:25:54Z",
+      "side": 1,
+      "message": "opravu síly signálu GSM",
+      "revId": "5b18b2ff8e6f75d67d98a271681c2a0c1e637b74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
