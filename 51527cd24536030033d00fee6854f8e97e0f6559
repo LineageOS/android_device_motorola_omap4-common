@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "iOq.c-4",
+        "filename": "OMAP4Parts/res/values-cs/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1558
+      },
+      "writtenOn": "2013-06-19T02:09:47Z",
+      "side": 1,
+      "message": "V tomto pripade bych rad ponechal \"telefonie\" nebot se jedna o vlastnosti cele technologie GSM. V originalu je \"GSM Telephony Options\" a vyraz \"telefonie\" uceleny vyraz prave pro tuto technologii.",
+      "revId": "51527cd24536030033d00fee6854f8e97e0f6559",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
