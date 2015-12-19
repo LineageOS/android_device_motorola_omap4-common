@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_77cbf01d",
+        "filename": "sepolicy/battd.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2975
+      },
+      "writtenOn": "2015-12-19T02:18:50Z",
+      "side": 1,
+      "message": "by convention, rules are placed in files based on the source context. So this should be placed in shell.te, not in this file.\n\nHaving said that, is this rule needed? Adding unnecessary rules just increases attack surface.",
+      "revId": "04194f3f4150f367166b75ca2faf2ffd0306bd0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_b7e0a898",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2975
+      },
+      "writtenOn": "2015-12-19T02:18:50Z",
+      "side": 1,
+      "message": "can be deleted. The default label for files on /system is system_file, so it\u0027s not necessary to explicitly state it here. You can rely on the default.\n\n(same comment for lines 69, 74, 77)",
+      "revId": "04194f3f4150f367166b75ca2faf2ffd0306bd0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_d7d99cf4",
+        "filename": "sepolicy/msp430.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2975
+      },
+      "writtenOn": "2015-12-19T02:18:50Z",
+      "side": 1,
+      "message": "Same comment as battd.te",
+      "revId": "04194f3f4150f367166b75ca2faf2ffd0306bd0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_37d578ba",
+        "filename": "sepolicy/thermal_manager.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2975
+      },
+      "writtenOn": "2015-12-19T02:18:50Z",
+      "side": 1,
+      "message": "same comment as battd.te",
+      "revId": "04194f3f4150f367166b75ca2faf2ffd0306bd0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_f7d620c4",
+        "filename": "sepolicy/whisperd.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2975
+      },
+      "writtenOn": "2015-12-19T02:18:50Z",
+      "side": 1,
+      "message": "same comment as battd.te",
+      "revId": "04194f3f4150f367166b75ca2faf2ffd0306bd0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
