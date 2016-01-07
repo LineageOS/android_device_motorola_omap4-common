@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_f38e10cf",
+        "filename": "prebuilt/bin/pdsbackup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-01-07T18:30:01Z",
+      "side": 1,
+      "message": "Since you specify the path below, isn\u0027t this unnecessary now?",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 11
+      },
+      "revId": "ecd2c80964126ee762742573d6bafabfa7103f03",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_93bd4c6a",
+        "filename": "prebuilt/bin/pdsbackup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-01-07T18:30:01Z",
+      "side": 1,
+      "message": "Same as above",
+      "range": {
+        "startLine": 50,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 22
+      },
+      "revId": "ecd2c80964126ee762742573d6bafabfa7103f03",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
