@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_3734934a",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 13026
+      },
+      "writtenOn": "2016-01-14T04:53:48Z",
+      "side": 1,
+      "message": "It\u0027ll probably never make any difference, but what about changing it to +\u003d $(COMMON_FOLDER)/cmhw?",
+      "revId": "45d81f69afc7586ab13b9e72952fed7e48d3f31a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
