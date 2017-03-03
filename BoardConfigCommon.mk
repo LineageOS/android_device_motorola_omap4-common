@@ -169,10 +169,9 @@ BOARD_GLOBAL_CFLAGS += -DBOARD_USE_MOTOROLA_DOMX_ENHANCEMENTS
 # Off currently
 
 # OTA Packaging
-TARGET_PROVIDES_RELEASETOOLS := true
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/motorola/omap4-common/releasetools/common_ota_from_target_files
 TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/omap4-common/releasetools
-TARGET_RELEASETOOL_MAKE_RECOVERY_PATCH_SCRIPT := device/motorola/omap4-common/releasetools/make_recovery_patch
+TARGET_RELEASETOOL_MAKE_RECOVERY_PATCH_SCRIPT := /bin/true
+BOARD_CUSTOM_BOOTIMG_MK := device/motorola/omap4-common/mkbootimg.mk
 
 # Misc.
 BOARD_USE_BATTERY_CHARGE_COUNTER := true
