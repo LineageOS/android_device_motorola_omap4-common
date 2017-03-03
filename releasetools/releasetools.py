@@ -1,5 +1,5 @@
 # Copyright (C) 2012 The Android Open Source Project
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2015-17 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import re
+import types
+
 """Custom OTA commands for Motorola omap4 devices"""
 
 def FullOTA_InstallBegin(info):
 	info.script.AppendExtra('assert(getprop("ro.build.selinux") == "1" || abort("This package needs a recovery with full SELinux-support"););')
+
+def _WriteRawImage(self, mount_point, fn, mapfn=None):
+	pass
+
+def _FormatPartition(self, partition):
+	self.Mount(partition)
+	self.AppendExtra('delete_recursive("'+partition+'");')
+	self.Unmount(partition)
+
+def _Mount(self, mount_point, mount_options_by_format=""):
+	fstab = self.fstab
+	if mount_point == "/system" and fstab and fstab[mount_point].fs_type == "ext4":
+		fstab[mount_point].fs_type = "ext3"
+	self.OldMount(mount_point, mount_options_by_format)
+
+def FullOTA_Assertions(info):
+	info.script.WriteRawImage = types.MethodType(_WriteRawImage, info.script)
+	info.script.FormatPartition = types.MethodType(_FormatPartition, info.script)
+	info.script.OldMount = info.script.Mount
+	info.script.Mount = types.MethodType(_Mount, info.script)
