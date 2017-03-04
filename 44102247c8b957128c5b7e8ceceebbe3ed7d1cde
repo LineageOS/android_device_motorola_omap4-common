@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa5d592f_fa0ea733",
+        "filename": "releasetools/releasetools.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 11604
+      },
+      "writtenOn": "2017-03-04T00:26:15Z",
+      "side": 1,
+      "message": "don\u0027t remove CM copyright\n\nCopyright (C) 2015 The CyanogenMod Project\nCopyright (C) 2017 The LineageOS Project",
+      "revId": "44102247c8b957128c5b7e8ceceebbe3ed7d1cde",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
