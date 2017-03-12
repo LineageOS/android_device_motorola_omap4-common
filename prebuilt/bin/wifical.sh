@@ -6,7 +6,7 @@ else
     WIFION="off"
 fi
 
-WL12xx_MODULE=/system/lib/modules/wl12xx_sdio.ko
+WL12xx_MODULE=/system/lib/modules/wlcore_sdio.ko
 PDS_NVS_FILE=/pds/wifi/nvs_map.bin
 SOURCE_FW_DIR=/system/etc/firmware/ti-connectivity
 TARGET_FW_DIR=/data/misc/wifi
@@ -28,7 +28,7 @@ then
     echo ""
 else
     echo "********************************************************"
-    echo "* wl12xx_sdio module not found !!"
+    echo "* wlcore_sdio module not found !!"
     echo "********************************************************"
     exit
 fi

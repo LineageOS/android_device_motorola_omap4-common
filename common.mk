@@ -190,10 +190,8 @@ PRODUCT_COPY_FILES += \
 
 # WLAN firmware
 PRODUCT_PACKAGES += \
-    wl1271-nvs_128x.bin \
-    wl128x-fw-4-sr.bin \
-    wl128x-fw-4-mr.bin \
-    wl128x-fw-4-plt.bin
+    $(addsuffix .bin, wl1271-nvs_128x \
+    $(addprefix wl128x-fw-5-,sr mr plt))
 
 # system/etc Prebuilts
 PRODUCT_COPY_FILES += \

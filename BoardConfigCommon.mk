@@ -53,7 +53,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # External WiLink Modules
--include hardware/ti/wlan/mac80211/wl12xx-wlan-modules.mk
+-include hardware/ti/wlan/mac80211/wl18xx-wlan-modules.mk
 
 # External SGX Module
 -include hardware/ti/omap4/pvr-km.mk
@@ -76,8 +76,8 @@ BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_wl12xx
 PRODUCT_WIRELESS_TOOLS           := true
 BOARD_WLAN_DEVICE                := wl12xx_mac80211
 BOARD_SOFTAP_DEVICE              := wl12xx_mac80211
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wl12xx_sdio.ko"
-WIFI_DRIVER_MODULE_NAME          := "wl12xx_sdio"
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlcore_sdio.ko"
+WIFI_DRIVER_MODULE_NAME          := "wlcore_sdio"
 WIFI_FIRMWARE_LOADER             := ""
 BOARD_WIFI_SKIP_CAPABILITIES     := true
 BOARD_GLOBAL_CFLAGS += -DUSES_TI_MAC80211
