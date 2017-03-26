@@ -18,6 +18,7 @@
 
 COMMON_FOLDER := device/motorola/omap4-common
 
+TARGET_BOARD_OMAP_CPU := 4430
 $(call inherit-product-if-exists, hardware/ti/omap4/omap4.mk)
 
 # Boot animation (HACK 540.zip crashes PVR currently)
