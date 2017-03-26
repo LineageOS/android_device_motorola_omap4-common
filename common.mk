@@ -158,6 +158,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# Build tools
+PRODUCT_PACKAGES += \
+    imgdiff
+
 # Remove packages filling up system
 PRODUCT_PACKAGES += \
     RemovePackages
