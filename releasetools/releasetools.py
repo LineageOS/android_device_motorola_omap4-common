@@ -15,6 +15,7 @@
 # limitations under the License.
 
 import types
+import common
 
 """Custom OTA commands for Motorola omap4 devices"""
 
@@ -35,8 +36,13 @@ def _Mount(self, mount_point, mount_options_by_format=""):
 		fstab[mount_point].fs_type = "ext3"
 	self.OldMount(mount_point, mount_options_by_format)
 
+def _MakeRecoveryPatch(input_dir, output_sink, recovery_img, boot_img,
+                      info_dict=None):
+	return
+
 def FullOTA_Assertions(info):
 	info.script.WriteRawImage = types.MethodType(_WriteRawImage, info.script)
 	info.script.FormatPartition = types.MethodType(_FormatPartition, info.script)
 	info.script.OldMount = info.script.Mount
 	info.script.Mount = types.MethodType(_Mount, info.script)
+	common.MakeRecoveryPatch = types.MethodType(_MakeRecoveryPatch, common)
