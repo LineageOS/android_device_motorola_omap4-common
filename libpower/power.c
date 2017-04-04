@@ -202,7 +202,12 @@ static void omap_power_hint(struct power_module *module, power_hint_t hint, void
 #ifdef POWER_HINT_CPU_BOOST
     case POWER_HINT_CPU_BOOST:
 #endif
+#ifdef POWER_HINT_LAUNCH_BOOST
     case POWER_HINT_LAUNCH_BOOST:
+#endif
+#ifdef POWER_HINT_LAUNCH
+    case POWER_HINT_LAUNCH
+#endif
         if (boostpulse_open(omap_device) >= 0) {
             if (data != NULL)
                 duration = *((int*)data);
