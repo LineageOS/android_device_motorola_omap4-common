@@ -209,9 +209,6 @@ static void omap_power_hint(struct power_module *module, power_hint_t hint, void
     case POWER_HINT_LAUNCH
 #endif
         if (boostpulse_open(omap_device) >= 0) {
-            if (data != NULL)
-                duration = *((int*)data);
-
             memset(buf, 0, sizeof(buf));
             snprintf(buf, sizeof(buf), "%d", duration);
             len = write(omap_device->boostpulse_fd, buf, strlen(buf));
