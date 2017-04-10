@@ -152,6 +152,7 @@ on post-fs-data
     restorecon_recursive /data/misc/akmd
 
     mkdir /data/misc/ril 0771 radio radio
+    symlink /data/user_de/0/com.android.providers.telephony/databases/telephony.db /data/misc/ril/telephony.db
     restorecon_recursive /data/misc/ril
 
 #PDS
