@@ -268,6 +268,9 @@ on post-fs-data
 # MTU for USB tethering
     write /sys/class/net/gether0/mtu 1428
 on early-boot
+#Make RIL happy by symlinking com.android.providers.telephony
+#to the old location
+    symlink /data/user_de/0/com.android.providers.telephony /data/data/com.android.providers.telephony
 # Adjust the out of memory thresholds to account for the larget
 # space on sholes. These numbers are in pages (4k). Must be kept
 # in sync with init.rc. This must be done before the regular init.rc
