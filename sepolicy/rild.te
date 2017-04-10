@@ -7,6 +7,7 @@ allow rild self:netlink_kobject_uevent_socket { create bind read write getopt se
 allow rild radio_device:chr_file rw_file_perms;
 
 allow rild radio_data_file:file { read open write setattr };
+allow rild radio_data_file:lnk_file { read open };
 
 allow rild device:chr_file ioctl;
 allow rild proc:file write;
@@ -15,7 +16,7 @@ allow rild system_data_file:dir create_dir_perms;
 allow rild rild_file:dir create_dir_perms;
 allow rild rild_file:sock_file { create unlink setattr };
 allow rild rild_file:file create_file_perms;
-allow rild rild_file:file create_file_perms;
+allow rild rild_file:lnk_file create_file_perms;
 allow rild socket_device:sock_file rw_file_perms;
 allow rild battd:unix_stream_socket { connectto read write setopt };
 allow rild sysfs:file rw_file_perms;
