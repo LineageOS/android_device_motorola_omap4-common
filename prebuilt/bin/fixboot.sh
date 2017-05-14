@@ -10,7 +10,12 @@ exec 2>&1
 
 SLOT_LOC=$(/sbin/bbx cat /ss/safestrap/active_slot)
 
-if [ "$SLOT_LOC" != "stock" ]; then
+if [ "$SLOT_LOC" = "altpart" ]; then
+/sbin/bbx mv /dev/block/system /dev/block/systemorig
+/sbin/bbx ln -s /dev/block/webtop /dev/block/system
+
+/sbin/bbx umount /ss
+elif [ "$SLOT_LOC" != "stock" ]; then
 # setup loopbacks
 /sbin/bbx losetup /dev/block/loop-system /ss/safestrap/$SLOT_LOC/system.img
 /sbin/bbx losetup /dev/block/loop-userdata /ss/safestrap/$SLOT_LOC/userdata.img
