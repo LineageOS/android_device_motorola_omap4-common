@@ -604,6 +604,10 @@ service akmd8975 /system/bin/akmd8975.sh
     class main
     user compass
     group compass misc input
+
+on property:wlan.driver.status=ok
+    chown wifi wifi /sys/devices/platform/wl1271/bt_coex_state
+
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
