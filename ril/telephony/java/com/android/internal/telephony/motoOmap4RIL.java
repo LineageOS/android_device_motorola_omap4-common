@@ -44,6 +44,7 @@ import android.text.TextUtils;
 import android.telephony.RadioAccessFamily;
 import android.telephony.Rlog;
 import android.telephony.ServiceState;
+import android.telephony.TelephonyManager;
 import android.net.NetworkUtils;
 import android.net.InterfaceConfiguration;
 import android.net.LinkAddress;
@@ -57,6 +58,9 @@ import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
 import com.android.internal.telephony.cdma.CdmaSmsBroadcastConfigInfo;
 import com.android.internal.telephony.dataconnection.DataCallResponse;
+import com.android.internal.telephony.uicc.IccRecords;
+import com.android.internal.telephony.uicc.UiccCardApplication;
+import com.android.internal.telephony.uicc.UiccController;
 
 public class motoOmap4RIL extends RIL implements CommandsInterface {
 
@@ -531,6 +535,31 @@ public class motoOmap4RIL extends RIL implements CommandsInterface {
 
                 if (voiceTech.length > 0)  {
                     switchCdmaGsm(voiceTech[0]);
+                }
+
+                p.setDataPosition(dataPosition);
+                return super.processSolicited(p, type);
+            case RIL_REQUEST_GET_IMSI:
+                String imsi = p.readString();
+
+                Rlog.v(RILJ_LOG_TAG, "motoOmap4RIL: RIL_REQUEST_GET_IMSI: numeric: " + imsi.substring(0, 6));
+                if ((getLteOnCdmaMode() == PhoneConstants.LTE_ON_CDMA_TRUE) &&
+                    SystemProperties.getBoolean("ro.telephony.get_imsi_from_sim", false) &&
+                    imsi != null) {
+                    Rlog.v(RILJ_LOG_TAG, "motoOmap4RIL: setting SimOperatorNumeric to " + imsi.substring(0, 6));
+                    ((TelephonyManager)mContext.getSystemService(Context.TELEPHONY_SERVICE)).setSimOperatorNumericForPhone(0, imsi.substring(0, 6));
+
+                    UiccController uiccController = UiccController.getInstance();
+                    if (uiccController != null) {
+                        UiccCardApplication uiccApplication = uiccController.getUiccCardApplication(0, UiccController.APP_FAM_3GPP2);
+                        if (uiccApplication != null) {
+                            IccRecords iccRecords = uiccApplication.getIccRecords();
+                            if (iccRecords != null) {
+                                iccRecords.setImsi(imsi);
+                                Rlog.v(RILJ_LOG_TAG, "motoOmap4RIL: setting IMSI to " + imsi.substring(0, 6) + "...");
+                            }
+                        }
+                    }
                 }
 
                 p.setDataPosition(dataPosition);
