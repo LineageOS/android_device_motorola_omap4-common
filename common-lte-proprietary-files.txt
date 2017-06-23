@@ -1,5 +1,4 @@
 # LTE RIL files need for maserati, spyder and targa
-bin/base64
 bin/extract-embedded-files
 bin/logcatd
 bin/logcatd-blan
