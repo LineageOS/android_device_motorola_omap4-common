@@ -168,12 +168,4 @@ for FILE in `egrep -v '(^#|^$)' ../omap4-common/common-vzw-proprietary-files.txt
 done
 fi
 
-IMGTEC=../../../vendor/$VENDOR/omap4-common/imgtec
-if [ ! -d $IMGTEC ]; then
-    mkdir -p $IMGTEC
-fi
-echo "Don't forget to add the imgtec blobs from"
-echo "http://omapzoom.org/?p=device/ti/proprietary-open.git;a=blob_plain;f=omap4/sgx.tgz;hb=7eef6aa6ef73ce97a9283a89d24a11c0606fd622"
-echo "to vendor/motorola/omap4-common"
-echo "These scripts will not work properly for solana as it requires some targa blob."
 ../omap4-common/setup-makefiles.sh
