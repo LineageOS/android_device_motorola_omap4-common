@@ -70,9 +70,6 @@ WLAN_MODULES:
 
 TARGET_KERNEL_MODULES += WLAN_MODULES
 
-# Lineage target to build standard modules
-TARGET_KERNEL_MODULES += INSTALLED_KERNEL_MODULES
-
 # External SGX Module
 -include hardware/ti/omap4/pvr-km.mk
 
