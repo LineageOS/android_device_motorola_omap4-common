@@ -52,23 +52,8 @@ COMMON_KERNEL_CMDLINE := androidboot.hardware=mapphone_cdma androidboot.selinux=
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
-WLAN_MODULES:
-	make clean -C hardware/ti/wlan/mac80211/compat_wl12xx
-	make -j8 -C hardware/ti/wlan/mac80211/compat_wl12xx KERNEL_DIR=$(KERNEL_OUT) KLIB=$(KERNEL_OUT) KLIB_BUILD=$(KERNEL_OUT) ARCH=arm CROSS_COMPILE="arm-linux-androideabi-"
-	mv hardware/ti/wlan/mac80211/compat_wl12xx/compat/compat.ko $(KERNEL_MODULES_OUT)
-	mv hardware/ti/wlan/mac80211/compat_wl12xx/net/mac80211/mac80211.ko $(KERNEL_MODULES_OUT)
-	mv hardware/ti/wlan/mac80211/compat_wl12xx/net/wireless/cfg80211.ko $(KERNEL_MODULES_OUT)
-	mv hardware/ti/wlan/mac80211/compat_wl12xx/drivers/net/wireless/wl12xx/wl12xx.ko $(KERNEL_MODULES_OUT)
-	mv hardware/ti/wlan/mac80211/compat_wl12xx/drivers/net/wireless/wl12xx/wl12xx_spi.ko $(KERNEL_MODULES_OUT)
-	mv hardware/ti/wlan/mac80211/compat_wl12xx/drivers/net/wireless/wl12xx/wl12xx_sdio.ko $(KERNEL_MODULES_OUT)
-	$(ANDROID_TOOLCHAIN)/arm-linux-androideabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/compat.ko
-	$(ANDROID_TOOLCHAIN)/arm-linux-androideabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/mac80211.ko
-	$(ANDROID_TOOLCHAIN)/arm-linux-androideabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/cfg80211.ko
-	$(ANDROID_TOOLCHAIN)/arm-linux-androideabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/wl12xx.ko
-	$(ANDROID_TOOLCHAIN)/arm-linux-androideabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/wl12xx_spi.ko
-	$(ANDROID_TOOLCHAIN)/arm-linux-androideabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/wl12xx_sdio.ko
-
-TARGET_KERNEL_MODULES += WLAN_MODULES
+# External WiLink Modules
+-include hardware/ti/wlan/mac80211/wl12xx-wlan-modules.mk
 
 # External SGX Module
 -include hardware/ti/omap4/pvr-km.mk
