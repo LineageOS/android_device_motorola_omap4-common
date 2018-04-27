@@ -15,6 +15,14 @@ if [ "$SLOT_LOC" = "altpart" ]; then
 /sbin/bbx ln -s /dev/block/webtop /dev/block/system
 
 /sbin/bbx umount /ss
+elif [ "$SLOT_LOC" = "safe" ]; then
+/sbin/bbx mv /dev/block/system /dev/block/systemorig
+/sbin/bbx mv /dev/block/userdata /dev/block/userdataorig
+
+/sbin/bbx ln -s /dev/block/preinstall /dev/block/system
+/sbin/bbx ln -s /dev/block/webtop /dev/block/userdata
+
+/sbin/bbx umount /ss
 elif [ "$SLOT_LOC" != "stock" ]; then
 # setup loopbacks
 /sbin/bbx losetup /dev/block/loop-system /ss/safestrap/$SLOT_LOC/system.img
