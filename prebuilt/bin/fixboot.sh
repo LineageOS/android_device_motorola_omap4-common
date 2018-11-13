@@ -10,6 +10,13 @@ exec 2>&1
 
 SLOT_LOC=$(/sbin/bbx cat /ss/safestrap/active_slot)
 
+# nothing to do, default to mmcblk1p20 system partition
+if [ "$SLOT_LOC" = "" ] || [ "$SLOT_LOC" = "stock" ]; then
+	/sbin/bbx umount /ss
+	exit 0
+fi
+
+# handle alternative system partitions and SafeStrap slots
 if [ "$SLOT_LOC" = "altpart" ]; then
 /sbin/bbx mv /dev/block/system /dev/block/systemorig
 /sbin/bbx ln -s /dev/block/webtop /dev/block/system
